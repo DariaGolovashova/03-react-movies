@@ -39,7 +39,7 @@ function App() {
       {selectedMovie && (<MovieModal
         movie={selectedMovie}
       onClose={()=>setSelectedMovie(null)}/>)}
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar onSubmit={handleSearch} />
       {loading && <Loader />}
       {error && <ErrorMessage />}
       {!loading && !error && (<MovieGrid
@@ -49,11 +49,7 @@ function App() {
 
       <Toaster />
 
-      <ul>
-        {movies.map((movie) => (
-          <li key={movie.id}>{movie.title}</li>
-        ))}
-      </ul>
+      
     </>
   );
 }
